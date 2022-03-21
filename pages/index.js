@@ -5,10 +5,10 @@ import Dropdown from "../components/Dropdown";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Dropdown />
       <h1 className=" ">Cybersec news </h1>
       <p>this is a paragraph just to test if eweryting is working </p>
-    </div>
+    </>
   );
 }
