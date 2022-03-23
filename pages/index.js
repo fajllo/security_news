@@ -2,15 +2,15 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Example from "../components/Navbar";
-import SignIn from "./auth";
+import SignIn from "../components/auth";
+import NewsContent from "../components/NewsContent";
 
 export default function Home() {
   return (
-    <div>
-      {/* <Example /> */}
-      <h1 className=" ">security news app</h1>
-      <p>this is a paragraph just to test if eweryting is working </p>
-      <SignIn />
+    <div className="flex flex-wrap">
+      <h1 className="w-screen text-[#D4EAC8] ">cybersecnews</h1>
+      {/* <SignIn /> */}
+      <NewsContent /> 
     </div>
   );
 }

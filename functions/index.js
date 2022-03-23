@@ -1,6 +1,11 @@
 const functions = require("firebase-functions");
 const cors = require("cors")({ origin: true });
 const puppeteer = require("puppeteer");
+const { initializeApp } = require("firebase-admin/app");
+const { getFirestore } = require("firebase-admin/firestore");
+initializeApp();
+const db = getFirestore();
+const darkreading = db.collection("darkreading");
 const runtimeOpts = {
   timeoutSeconds: 300,
   memory: "1GB",
@@ -17,21 +22,25 @@ async function getNews() {
         latest: "",
         summary: "",
         author: "",
-        img: "",
         link: "",
       };
       child.latest = news.children[0].innerText;
       child.summary = news.children[1].innerText;
       child.author = news.children[2].innerText;
       child.link = news.children[0].children[0].children[0].href;
+
       return child;
     });
   });
   browser.close();
+  for (let news of shortNews) {
+    darkreading.add({ ...news });
+  }
+
   return shortNews;
 }
 
-exports.scraper = functions
+exports.webScraper = functions
   .runWith(runtimeOpts)
   .https.onRequest((request, response) => {
     cors(request, response, async () => {

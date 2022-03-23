@@ -22,11 +22,11 @@ h3 {
   @apply font-audio font-bold text-[#D4EAC8];
 }
 h1 {
-  @apply text-2xl;
+  @apply text-xl;
 }
 
 h2 {
-  @apply text-xl;
+  @apply text-lg;
 }
 
 p {
