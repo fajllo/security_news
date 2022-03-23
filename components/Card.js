@@ -7,8 +7,8 @@ export default function Card(postItem) {
   return (
     <div className=" bg-[#161214] shadow-md shadow-[#7CF0BD] my-4 md:mx-4 mx-2">
       <div className="flex p-6 font-mono ">
-        <form classNameName="flex-auto pl-6">
-          <div classNameName="relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
+        <form className="flex-auto pl-6">
+          <div className="relative flex flex-wrap items-baseline pb-6  before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
             <h1 className="relative w-full flex-none mb-2  font-semibold ">
               {post.summary}
             </h1>

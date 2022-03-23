@@ -17,6 +17,12 @@ function MyApp({ Component, pageProps }) {
           content={"this a security news website created with next js "}
         />
       </Head>
+      <header>
+        <h1 className="w-screen text-[#D4EAC8] fixed top-0 left-0 bg-[#070600]  p-4 z-10 ">
+          cybersecnews
+        </h1>
+        <div className="h-10"></div>
+      </header>
 
       <Component {...pageProps} />
     </>
