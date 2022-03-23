@@ -37,9 +37,7 @@ export default function Card(postItem) {
               </button>
             </div>
           </div>
-          <p className="text-xs leading-6 ">
-            by Dark Reading Staff, Dark Reading\n\nMar 21, 2022"
-          </p>
+          <p className="text-xs leading-6 ">{post.author}</p>
         </form>
       </div>
     </div>
