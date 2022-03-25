@@ -9,13 +9,14 @@ import {
   doc,
 } from "firebase/firestore";
 
-export default function NewsContent() {
+export default function NewsContent({ newsProvider }) {
   let data;
 
   const [posts, setPosts] = useState([]);
+
   useEffect(async () => {
     // real time
-    const colRef = collection(db, "darkreading");
+    const colRef = collection(db, newsProvider);
     data = onSnapshot(colRef, snap => {
       const news = snap.docs.map(doc => {
         return { ...doc.data(), id: doc.id };

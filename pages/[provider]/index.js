@@ -1,8 +1,15 @@
 import NewsContent from "../../components/NewsContent";
-export default function ProviderPage() {
+import { useRouter } from "next/router";
+export async function getServerSideProps({ query: urlQuery }) {
+  //   get user name from url
+  const { provider } = urlQuery;
+
+  return { props: { provider } };
+}
+export default function ProviderPage({ provider }) {
   return (
     <div>
-      <NewsContent />
+      <NewsContent newsProvider={provider} />
     </div>
   );
 }

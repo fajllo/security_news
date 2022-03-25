@@ -15,7 +15,7 @@ async function getNews() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto("https://www.darkreading.com");
-  await page.waitFor(15000);
+
   const shortNews = await page.$$eval(".wrap-latest-item", article => {
     return article.map(news => {
       let child = {
@@ -40,7 +40,7 @@ async function getNews() {
   return shortNews;
 }
 
-exports.webScraper = functions
+exports.scrapy2 = functions
   .runWith(runtimeOpts)
   .https.onRequest((request, response) => {
     cors(request, response, async () => {

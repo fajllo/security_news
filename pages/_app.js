@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import Picker from "../components/Picker";
+import Link from "next/link";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -17,12 +19,16 @@ function MyApp({ Component, pageProps }) {
           content={"this a security news website created with next js "}
         />
       </Head>
-      <header>
-        <h1 className="w-screen text-[#D4EAC8] fixed top-0 left-0 bg-[#070600]  p-4 z-10 ">
-          cybersecnews
-        </h1>
-        <div className="h-10"></div>
+      <header className="flex w-full bg-[#070600] z-10 opacity-1 fixed top-0 left-100">
+        <div className="flex justify-between   w-full">
+          {" "}
+          {/* <Picker /> */}
+          <Link href="/">
+            <h1 className=" text-[#D4EAC8]   p-4  ">cybersecnews</h1>
+          </Link>
+        </div>
       </header>
+      <div className="h-10"></div>
 
       <Component {...pageProps} />
     </>
