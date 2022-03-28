@@ -14,7 +14,7 @@ export default function Card(postItem) {
             </h1>
 
             <div className="relative uppercase text-teal-400 ml-3">
-              {post.latest}
+              <p>{post.latest}</p>
             </div>
           </div>
           <div className="flex items-baseline my-6"></div>
@@ -28,13 +28,13 @@ export default function Card(postItem) {
                   Read full article
                 </button>
               </Link>
-
-              <button
+              {/* remomend option doesnt work for now */}
+              {/* <button
                 className="px-6 h-12 uppercase font-semibold tracking-wider border-2 border-teal-400 text-white"
                 type="button"
               >
                 Recomend
-              </button>
+              </button> */}
             </div>
           </div>
           <p className="text-xs leading-6 ">{post.author}</p>

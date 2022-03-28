@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
             <h1 className=" text-[#D4EAC8]   p-4  ">cybersecnews</h1>
           </Link>
         </div>
+        <Picker />
       </header>
       <div className="h-10"></div>
 
