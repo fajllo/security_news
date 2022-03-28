@@ -8,13 +8,16 @@ import {
   onSnapshot,
   doc,
 } from "firebase/firestore";
+import Skeleton from "./Skeleton";
 
 export default function NewsContent({ newsProvider }) {
   let data;
 
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(async () => {
+    setLoading(false);
     const colRef = collection(db, newsProvider);
     data = onSnapshot(colRef, snap => {
       const news = snap.docs.map(doc => {
@@ -27,7 +30,19 @@ export default function NewsContent({ newsProvider }) {
       );
     });
     // );
+
+    setLoading(true);
   }, [newsProvider]);
 
-  return <div>{posts}</div>;
+  return <div>{loading ? posts : <Loader />}</div>;
+}
+
+function Loader() {
+  return (
+    <div>
+      <Skeleton />
+      <Skeleton />
+      <Skeleton />
+    </div>
+  );
 }
