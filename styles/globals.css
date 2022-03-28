@@ -19,7 +19,7 @@ a {
 h1,
 h2,
 h3 {
-  @apply font-audio font-bold text-[#D4EAC8];
+  @apply font-audio font-bold  text-[#7CF0BD];
 }
 h1 {
   @apply text-xl;
@@ -30,7 +30,7 @@ h2 {
 }
 
 p {
-  @apply font-thin font-mon lg:text-lg text-[#7CF0BD];
+  @apply font-thin font-mon lg:text-lg text-[#D4EAC8] lowercase;
 }
 /*
 colors 
