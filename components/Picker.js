@@ -3,7 +3,6 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
-
 export default function Picker() {
   return (
     <div>
@@ -27,17 +26,17 @@ export default function Picker() {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-[#7F6A93] divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-[#a3bbad] border-2 border-[#a3c9a8]  divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div className="px-1 py-1 ">
                 <Link href="/darkreading">
                   <Menu.Item>
                     {({ active }) => (
                       <button
                         className={`${
-                          active ? "bg-purple-400 text-white" : "text-gray-900"
+                          active ? "bg-[#0e3b43] text-white" : "text-gray-900"
                         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                       >
-                        <Link href="/darkreading">darkreading</Link>
+                        <Link href="/darkreading">DARK READING</Link>
                       </button>
                     )}
                   </Menu.Item>
@@ -47,10 +46,23 @@ export default function Picker() {
                     {({ active }) => (
                       <button
                         className={`${
-                          active ? "bg-purple-400 text-white" : "text-gray-900"
+                          active ? "bg-[#0e3b43] text-white" : "text-gray-900"
                         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                       >
-                        the hacker news
+                        THE HACKER NEWS
+                      </button>
+                    )}
+                  </Menu.Item>
+                </Link>
+                <Link href="/latesthackingnews">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        className={`${
+                          active ? "bg-[#0e3b43] text-white" : "text-gray-900"
+                        } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                      >
+                        LATEST HACKING NEWS
                       </button>
                     )}
                   </Menu.Item>

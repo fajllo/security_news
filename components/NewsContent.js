@@ -15,7 +15,6 @@ export default function NewsContent({ newsProvider }) {
   const [posts, setPosts] = useState([]);
 
   useEffect(async () => {
-    // real time
     const colRef = collection(db, newsProvider);
     data = onSnapshot(colRef, snap => {
       const news = snap.docs.map(doc => {
@@ -27,7 +26,8 @@ export default function NewsContent({ newsProvider }) {
         })
       );
     });
-  }, [data]);
+    // );
+  }, [newsProvider]);
 
   return <div>{posts}</div>;
 }
