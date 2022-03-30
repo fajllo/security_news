@@ -30,7 +30,6 @@ export default function NewsContent({ newsProvider }) {
       );
     });
     // );
-
     setLoading(true);
   }, [newsProvider]);
 

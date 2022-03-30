@@ -1,11 +1,21 @@
 import React from "react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function Card(postItem) {
   const { post } = postItem;
+  const notify = e => {
+    toast.success("Coppied to clipboard", {
+      style: { backgroundColor: "#02c39a" },
+    });
 
+    navigator.clipboard.writeText(post.link);
+  };
   return (
-    <div className=" bg-[#161214] shadow-md shadow-[#7CF0BD] my-4 md:mx-4 mx-2">
+    <div
+      className=" bg-[#161214] shadow-md shadow-[#7CF0BD] my-4 md:mx-4 mx-2"
+      id={post.id}
+    >
       <div className="flex p-6 font-mono ">
         <form className="flex-auto pl-6">
           <div className="relative flex flex-wrap items-baseline pb-6  before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
@@ -29,12 +39,13 @@ export default function Card(postItem) {
                 </button>
               </Link>
               {/* remomend option doesnt work for now */}
-              {/* <button
+              <button
                 className="px-6 h-12 uppercase font-semibold tracking-wider border-2 border-teal-400 text-white"
                 type="button"
+                onClick={notify}
               >
-                Recomend
-              </button> */}
+                Copy link to full article
+              </button>
             </div>
           </div>
           <p className="text-xs leading-6 ">{post.author}</p>

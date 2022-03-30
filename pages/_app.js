@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Head from "next/head";
 import Picker from "../components/Picker";
 import Link from "next/link";
+import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }) {
         <Picker />
       </header>
       <div className="h-10"></div>
+      <Toaster /*position="top-left"*/ />
 
       <Component {...pageProps} />
     </>
